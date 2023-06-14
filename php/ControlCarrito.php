@@ -11,7 +11,7 @@ function carrito(){
     if (mysqli_num_rows($resultado) > 0) {
         echo "<table class='table'>";
         echo "<thead class='table-dark'>";
-        echo "<tr><th>ID</th><th>Título</th><th>Total</th><th>Usuario</th><th>Fecha de pedido</th><th>Acciones</th></tr>";
+        echo "<tr><th>ID</th><th>Nombre</th><th>Total</th><th>Usuario</th><th>Fecha de pedido</th><th>Acciones</th></tr>";
         echo "</thead>";
         echo "<tbody>";
         while ($fila = mysqli_fetch_assoc($resultado)) {

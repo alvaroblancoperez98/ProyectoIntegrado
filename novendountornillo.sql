@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2023 a las 17:28:28
+-- Tiempo de generación: 14-06-2023 a las 21:09:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `carrito` (
 --
 
 INSERT INTO `carrito` (`id`, `Stock`, `total`, `usuario`, `fecha_pedido`) VALUES
-(4, 'Tornillos x24', 5, 'Alvaro', '2023-05-18');
+(4, 'Tornillos x24', 5, 'Alvaro', '2023-05-18'),
+(6, 'Tornillos x24', 5, 'Alvaro2', '2023-06-08');
 
 -- --------------------------------------------------------
 
@@ -79,6 +80,13 @@ CREATE TABLE `pedido` (
   `usuario` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`id`, `direccion`, `fecha`, `stock`, `precio`, `total`, `usuario`) VALUES
+(2, 'aaaaaaaaaaaaaaaa', '2023-06-08', 'Tornillos x24', 10, 2, 'Alvaro2');
+
 -- --------------------------------------------------------
 
 --
@@ -98,7 +106,9 @@ CREATE TABLE `stock` (
 --
 
 INSERT INTO `stock` (`id`, `nombre`, `descripcion`, `precio`, `imagen`) VALUES
-(2, 'Tornillos x24', 'Caja de 24 tornillos de 2cm.', 5, 'tornillo');
+(2, 'Tornillos x24', 'Caja de 24 tornillos de 2cm.', 5, 'tornillo'),
+(3, 'Destornillador', 'Dos destornilladores punta fina y estrellada', 15, 'destornillador'),
+(4, 'Martillo', 'Martillo normal', 15, 'martillo');
 
 -- --------------------------------------------------------
 
@@ -120,7 +130,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `direccion`, `fecha_registro`, `password`, `correo`) VALUES
-(1, 'Alvaro', 'aaaaaa', '2023-05-18', '3e6c7d141e32189c917761138b026b74', 'alvaro.blanco002@gmail.com');
+(1, 'Alvaro', 'aaaaaa', '2023-05-18', '3e6c7d141e32189c917761138b026b74', 'alvaro.blanco002@gmail.com'),
+(2, 'Alvaro2', 'aaaaaaaaaaaaaaaa', '2023-06-08', '3d848b09d7194628df7a9ece09ac2d1a', 'alvaro.blanco002@gmail.com'),
+(3, 'Alvaro', 'aaaaaa', '2023-06-14', '5fe07c0ba6fa9b6b9c3ec8aeccda3102', 'alvaro.blanco002@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -164,7 +176,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
@@ -176,19 +188,19 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

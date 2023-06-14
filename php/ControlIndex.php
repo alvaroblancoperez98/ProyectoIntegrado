@@ -20,7 +20,7 @@ function Stock()
             echo "<td>" . $fila['nombre'] . "</td>";
             echo "<td>" . $fila['descripcion'] . "</td>";
             echo "<td>" . $fila['precio'] . "</td>";
-            echo "<td><img src=" . "../images/" . $fila['imagen'] . ".png" . "></td>";
+            echo "<td><img style='max-height: 30px; max-width: 30px;' src=" . "../images/" . $fila['imagen'] . ".png" . "></td>";
             echo "<td><form method='post' action=''>";
             echo "<input type='hidden' name='Stock' value='" . $fila['nombre'] . "' />";
             echo "<input type='hidden' name='precio' value='" . $fila['precio'] . "' />";
